@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel VirtualBox Web</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #184a8c;
+            border-bottom: 2px solid #184a8c;
+            padding-bottom: 10px;
+        }
+        .vm-card {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-left: 5px solid #28a745; /* Verde para ligada */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .vm-card.off {
+            border-left-color: #dc3545; /* Vermelho para desligada */
+        }
+        .vm-info h3 {
+            margin: 0 0 5px 0;
+        }
+        .status {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 0.9em;
+        }
+        .status.on { background: #d4edda; color: #155724; }
+        .status.off { background: #f8d7da; color: #721c24; }
+        .btn {
+            background-color: #184a8c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover { background-color: #113363; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Gerenciador VirtualBox (Simulação)</h1>
+    <p>Estado atual das máquinas virtuais no servidor:</p>
+
+    <!-- Máquina Virtual 1 -->
+    <div class="vm-card">
+        <div class="vm-info">
+            <h3>Servidor Ubuntu Linux</h3>
+            <p>IP: 192.168.1.50 | Memória: 2048 MB</p>
+        </div>
+        <div>
+            <span class="status on">Ligada</span>
+            <button class="btn" onclick="alert('A desligar máquina...')">Desligar</button>
+        </div>
+    </div>
+
+    <!-- Máquina Virtual 2 -->
+    <div class="vm-card off">
+        <div class="vm-info">
+            <h3>Windows 11 Testes</h3>
+            <p>IP: N/D | Memória: 4096 MB</p>
+        </div>
+        <div>
+            <span class="status off">Desligada</span>
+            <button class="btn" onclick="alert('A iniciar máquina...')">Iniciar</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
